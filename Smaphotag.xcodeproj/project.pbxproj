@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C34E881C15E5809F004D6B14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34E881B15E5809F004D6B14 /* Cocoa.framework */; };
+		C34E882615E5809F004D6B14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C34E882415E5809F004D6B14 /* InfoPlist.strings */; };
+		C34E882815E5809F004D6B14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C34E882715E5809F004D6B14 /* main.m */; };
+		C34E882C15E5809F004D6B14 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C34E882A15E5809F004D6B14 /* Credits.rtf */; };
+		C34E882F15E5809F004D6B14 /* SPTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C34E882E15E5809F004D6B14 /* SPTAppDelegate.m */; };
+		C34E883215E580A0004D6B14 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34E883015E580A0004D6B14 /* MainMenu.xib */; };
+		C34E883A15E580A0004D6B14 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34E883915E580A0004D6B14 /* SenTestingKit.framework */; };
+		C34E883B15E580A0004D6B14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34E881B15E5809F004D6B14 /* Cocoa.framework */; };
+		C34E884315E580A0004D6B14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C34E884115E580A0004D6B14 /* InfoPlist.strings */; };
+		C34E884615E580A0004D6B14 /* SmaphotagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C34E884515E580A0004D6B14 /* SmaphotagTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C34E883C15E580A0004D6B14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C34E880E15E5809F004D6B14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C34E881615E5809F004D6B14;
+			remoteInfo = Smaphotag;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C34E881715E5809F004D6B14 /* Smaphotag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smaphotag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34E881B15E5809F004D6B14 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C34E881E15E5809F004D6B14 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C34E881F15E5809F004D6B14 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C34E882015E5809F004D6B14 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C34E882315E5809F004D6B14 /* Smaphotag-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Smaphotag-Info.plist"; sourceTree = "<group>"; };
+		C34E882515E5809F004D6B14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C34E882715E5809F004D6B14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C34E882915E5809F004D6B14 /* Smaphotag-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smaphotag-Prefix.pch"; sourceTree = "<group>"; };
+		C34E882B15E5809F004D6B14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C34E882D15E5809F004D6B14 /* SPTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPTAppDelegate.h; sourceTree = "<group>"; };
+		C34E882E15E5809F004D6B14 /* SPTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPTAppDelegate.m; sourceTree = "<group>"; };
+		C34E883115E580A0004D6B14 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C34E883815E580A0004D6B14 /* SmaphotagTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmaphotagTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34E883915E580A0004D6B14 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C34E884015E580A0004D6B14 /* SmaphotagTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmaphotagTests-Info.plist"; sourceTree = "<group>"; };
+		C34E884215E580A0004D6B14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C34E884415E580A0004D6B14 /* SmaphotagTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmaphotagTests.h; sourceTree = "<group>"; };
+		C34E884515E580A0004D6B14 /* SmaphotagTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmaphotagTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C34E881415E5809F004D6B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34E881C15E5809F004D6B14 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C34E883415E580A0004D6B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34E883A15E580A0004D6B14 /* SenTestingKit.framework in Frameworks */,
+				C34E883B15E580A0004D6B14 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C34E880C15E5809F004D6B14 = {
+			isa = PBXGroup;
+			children = (
+				C34E882115E5809F004D6B14 /* Smaphotag */,
+				C34E883E15E580A0004D6B14 /* SmaphotagTests */,
+				C34E881A15E5809F004D6B14 /* Frameworks */,
+				C34E881815E5809F004D6B14 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C34E881815E5809F004D6B14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C34E881715E5809F004D6B14 /* Smaphotag.app */,
+				C34E883815E580A0004D6B14 /* SmaphotagTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C34E881A15E5809F004D6B14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C34E881B15E5809F004D6B14 /* Cocoa.framework */,
+				C34E883915E580A0004D6B14 /* SenTestingKit.framework */,
+				C34E881D15E5809F004D6B14 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C34E881D15E5809F004D6B14 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C34E881E15E5809F004D6B14 /* AppKit.framework */,
+				C34E881F15E5809F004D6B14 /* CoreData.framework */,
+				C34E882015E5809F004D6B14 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C34E882115E5809F004D6B14 /* Smaphotag */ = {
+			isa = PBXGroup;
+			children = (
+				C34E882D15E5809F004D6B14 /* SPTAppDelegate.h */,
+				C34E882E15E5809F004D6B14 /* SPTAppDelegate.m */,
+				C34E883015E580A0004D6B14 /* MainMenu.xib */,
+				C34E882215E5809F004D6B14 /* Supporting Files */,
+			);
+			path = Smaphotag;
+			sourceTree = "<group>";
+		};
+		C34E882215E5809F004D6B14 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C34E882315E5809F004D6B14 /* Smaphotag-Info.plist */,
+				C34E882415E5809F004D6B14 /* InfoPlist.strings */,
+				C34E882715E5809F004D6B14 /* main.m */,
+				C34E882915E5809F004D6B14 /* Smaphotag-Prefix.pch */,
+				C34E882A15E5809F004D6B14 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C34E883E15E580A0004D6B14 /* SmaphotagTests */ = {
+			isa = PBXGroup;
+			children = (
+				C34E884415E580A0004D6B14 /* SmaphotagTests.h */,
+				C34E884515E580A0004D6B14 /* SmaphotagTests.m */,
+				C34E883F15E580A0004D6B14 /* Supporting Files */,
+			);
+			path = SmaphotagTests;
+			sourceTree = "<group>";
+		};
+		C34E883F15E580A0004D6B14 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C34E884015E580A0004D6B14 /* SmaphotagTests-Info.plist */,
+				C34E884115E580A0004D6B14 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C34E881615E5809F004D6B14 /* Smaphotag */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C34E884915E580A0004D6B14 /* Build configuration list for PBXNativeTarget "Smaphotag" */;
+			buildPhases = (
+				C34E881315E5809F004D6B14 /* Sources */,
+				C34E881415E5809F004D6B14 /* Frameworks */,
+				C34E881515E5809F004D6B14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Smaphotag;
+			productName = Smaphotag;
+			productReference = C34E881715E5809F004D6B14 /* Smaphotag.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C34E883715E580A0004D6B14 /* SmaphotagTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C34E884C15E580A0004D6B14 /* Build configuration list for PBXNativeTarget "SmaphotagTests" */;
+			buildPhases = (
+				C34E883315E580A0004D6B14 /* Sources */,
+				C34E883415E580A0004D6B14 /* Frameworks */,
+				C34E883515E580A0004D6B14 /* Resources */,
+				C34E883615E580A0004D6B14 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C34E883D15E580A0004D6B14 /* PBXTargetDependency */,
+			);
+			name = SmaphotagTests;
+			productName = SmaphotagTests;
+			productReference = C34E883815E580A0004D6B14 /* SmaphotagTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C34E880E15E5809F004D6B14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SPT;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Dennis Schmidt";
+			};
+			buildConfigurationList = C34E881115E5809F004D6B14 /* Build configuration list for PBXProject "Smaphotag" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C34E880C15E5809F004D6B14;
+			productRefGroup = C34E881815E5809F004D6B14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C34E881615E5809F004D6B14 /* Smaphotag */,
+				C34E883715E580A0004D6B14 /* SmaphotagTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C34E881515E5809F004D6B14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34E882615E5809F004D6B14 /* InfoPlist.strings in Resources */,
+				C34E882C15E5809F004D6B14 /* Credits.rtf in Resources */,
+				C34E883215E580A0004D6B14 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C34E883515E580A0004D6B14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34E884315E580A0004D6B14 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C34E883615E580A0004D6B14 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C34E881315E5809F004D6B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34E882815E5809F004D6B14 /* main.m in Sources */,
+				C34E882F15E5809F004D6B14 /* SPTAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C34E883315E580A0004D6B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34E884615E580A0004D6B14 /* SmaphotagTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C34E883D15E580A0004D6B14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C34E881615E5809F004D6B14 /* Smaphotag */;
+			targetProxy = C34E883C15E580A0004D6B14 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C34E882415E5809F004D6B14 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C34E882515E5809F004D6B14 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C34E882A15E5809F004D6B14 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C34E882B15E5809F004D6B14 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		C34E883015E580A0004D6B14 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C34E883115E580A0004D6B14 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		C34E884115E580A0004D6B14 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C34E884215E580A0004D6B14 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C34E884715E580A0004D6B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C34E884815E580A0004D6B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C34E884A15E580A0004D6B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Smaphotag/Smaphotag-Prefix.pch";
+				INFOPLIST_FILE = "Smaphotag/Smaphotag-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C34E884B15E580A0004D6B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Smaphotag/Smaphotag-Prefix.pch";
+				INFOPLIST_FILE = "Smaphotag/Smaphotag-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C34E884D15E580A0004D6B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Smaphotag.app/Contents/MacOS/Smaphotag";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Smaphotag/Smaphotag-Prefix.pch";
+				INFOPLIST_FILE = "SmaphotagTests/SmaphotagTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C34E884E15E580A0004D6B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Smaphotag.app/Contents/MacOS/Smaphotag";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Smaphotag/Smaphotag-Prefix.pch";
+				INFOPLIST_FILE = "SmaphotagTests/SmaphotagTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C34E881115E5809F004D6B14 /* Build configuration list for PBXProject "Smaphotag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C34E884715E580A0004D6B14 /* Debug */,
+				C34E884815E580A0004D6B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C34E884915E580A0004D6B14 /* Build configuration list for PBXNativeTarget "Smaphotag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C34E884A15E580A0004D6B14 /* Debug */,
+				C34E884B15E580A0004D6B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C34E884C15E580A0004D6B14 /* Build configuration list for PBXNativeTarget "SmaphotagTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C34E884D15E580A0004D6B14 /* Debug */,
+				C34E884E15E580A0004D6B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C34E880E15E5809F004D6B14 /* Project object */;
+}
