@@ -17,6 +17,7 @@
 		C34E883B15E580A0004D6B14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34E881B15E5809F004D6B14 /* Cocoa.framework */; };
 		C34E884315E580A0004D6B14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C34E884115E580A0004D6B14 /* InfoPlist.strings */; };
 		C34E884615E580A0004D6B14 /* SmaphotagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C34E884515E580A0004D6B14 /* SmaphotagTests.m */; };
+		C34E885115E58452004D6B14 /* SPTPhotoTagger.m in Sources */ = {isa = PBXBuildFile; fileRef = C34E885015E58452004D6B14 /* SPTPhotoTagger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		C34E884215E580A0004D6B14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C34E884415E580A0004D6B14 /* SmaphotagTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmaphotagTests.h; sourceTree = "<group>"; };
 		C34E884515E580A0004D6B14 /* SmaphotagTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmaphotagTests.m; sourceTree = "<group>"; };
+		C34E884F15E58452004D6B14 /* SPTPhotoTagger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPhotoTagger.h; sourceTree = "<group>"; };
+		C34E885015E58452004D6B14 /* SPTPhotoTagger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTPhotoTagger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				C34E882E15E5809F004D6B14 /* SPTAppDelegate.m */,
 				C34E883015E580A0004D6B14 /* MainMenu.xib */,
 				C34E882215E5809F004D6B14 /* Supporting Files */,
+				C34E884F15E58452004D6B14 /* SPTPhotoTagger.h */,
+				C34E885015E58452004D6B14 /* SPTPhotoTagger.m */,
 			);
 			path = Smaphotag;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 			files = (
 				C34E882815E5809F004D6B14 /* main.m in Sources */,
 				C34E882F15E5809F004D6B14 /* SPTAppDelegate.m in Sources */,
+				C34E885115E58452004D6B14 /* SPTPhotoTagger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

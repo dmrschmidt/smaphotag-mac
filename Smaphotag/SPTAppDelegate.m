@@ -13,6 +13,12 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    [self.window registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
+}
+
+- (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
+    NSLog(@"filename: %@", filename);
+    return YES;
 }
 
 @end
