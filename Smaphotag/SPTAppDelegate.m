@@ -18,6 +18,12 @@
 
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
     NSLog(@"EXIF DATA: %@", [SPTPhotoTagger exifForFile:filename]);
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"exiftool/exiftool" ofType:nil];
+    NSLog(@"path: %@", path);
+    
+    NSArray *arguments = [NSArray arrayWithObject:filename];
+    NSTask *task = [NSTask launchedTaskWithLaunchPath:path arguments:arguments];
     return YES;
 }
 
