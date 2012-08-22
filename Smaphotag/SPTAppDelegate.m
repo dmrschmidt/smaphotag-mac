@@ -22,7 +22,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"exiftool/exiftool" ofType:nil];
     NSLog(@"path: %@", path);
     
-    NSArray *arguments = [NSArray arrayWithObject:filename];
+    NSArray *arguments = [NSArray arrayWithObjects:@"-GPSLongitude=\"7.422809\"", @"-GPSLatitude=\"48.419973\"", filename, nil];
     NSTask *task = [NSTask launchedTaskWithLaunchPath:path arguments:arguments];
     return YES;
 }
