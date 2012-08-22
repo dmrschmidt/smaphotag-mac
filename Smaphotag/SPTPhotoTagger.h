@@ -10,4 +10,6 @@
 
 @interface SPTPhotoTagger : NSObject
 
++ (NSDictionary *)exifForFile:(NSString *)file;
+
 @end

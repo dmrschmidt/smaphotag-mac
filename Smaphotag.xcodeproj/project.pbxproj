@@ -78,6 +78,7 @@
 		C34E880C15E5809F004D6B14 = {
 			isa = PBXGroup;
 			children = (
+				C34E885215E5911D004D6B14 /* External */,
 				C34E882115E5809F004D6B14 /* Smaphotag */,
 				C34E883E15E580A0004D6B14 /* SmaphotagTests */,
 				C34E881A15E5809F004D6B14 /* Frameworks */,
@@ -156,6 +157,13 @@
 				C34E884115E580A0004D6B14 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C34E885215E5911D004D6B14 /* External */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +391,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Smaphotag/Smaphotag-Prefix.pch";
 				INFOPLIST_FILE = "Smaphotag/Smaphotag-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/External\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -395,6 +407,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Smaphotag/Smaphotag-Prefix.pch";
 				INFOPLIST_FILE = "Smaphotag/Smaphotag-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/External\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
