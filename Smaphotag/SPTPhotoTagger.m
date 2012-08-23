@@ -10,9 +10,9 @@
 
 @implementation SPTPhotoTagger
 
-+ (NSString *)googleDrivePath {
++ (NSString *)smaphotagPath {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults valueForKey:@"googleDrivePath"];
+    return [defaults valueForKey:@"smaphotagPath"];
 }
 
 + (NSDictionary *)exifForFile:(NSString *)file {
@@ -41,7 +41,7 @@
 + (void)tagFileOrFilesAtPath:(NSString *)path {
     BOOL isDir;
     NSString *exiftoolPath = [[NSBundle mainBundle] pathForResource:@"exiftool/exiftool" ofType:nil];
-    NSString *gpxPath = [self googleDrivePath];
+    NSString *gpxPath = [self smaphotagPath];
     NSLog(@"looking fore GPX files at path %@", gpxPath);
     
     if([[NSFileManager defaultManager] fileExistsAtPath:gpxPath isDirectory:&isDir] && isDir) {
@@ -57,7 +57,7 @@
             NSLog(@"exited with status %d", [task terminationStatus]);
         }
     } else {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"Google Drive folder missing" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please check if the path to Google Drive you've given - %@ is correct.", [self googleDrivePath]];
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Google Drive folder missing" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please check if the path to Google Drive you've given - %@ is correct.", [self smaphotagPath]];
         [alert runModal];
     }
 }
