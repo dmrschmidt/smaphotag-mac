@@ -13,7 +13,7 @@
 + (NSString *)googleDrivePath {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *googleDrivePath = [[defaults valueForKey:@"googleDrivePath"] stringByExpandingTildeInPath];
-    return googleDrivePath;
+    return [googleDrivePath stringByAppendingPathComponent:@"Apps"];
 }
 
 + (NSString *)smaphotagPath {
@@ -112,8 +112,8 @@
             
             NSString *gpxFilePath = [gpxPath stringByAppendingPathComponent:gpxFile];
             for(NSString *filePath in [self photoFileList:fileOrdDirPath]) {
-                NSArray *arguments = [NSArray arrayWithObjects:@"-geotag", gpxFilePath,
-                                      @"-xmp:geotime<createdate", filePath, nil];
+                NSArray *arguments = [NSArray arrayWithObjects:@"-overwrite_original", @"-geotag",
+                                      gpxFilePath, @"-xmp:geotime<createdate", filePath, nil];
                 NSTask *task = [NSTask launchedTaskWithLaunchPath:exiftoolPath arguments:arguments];
                 [task setTerminationHandler:^(NSTask *task) { [self notifyUserAboutCompletedTask]; }];
                 [self.taskList addObject:task];
@@ -121,7 +121,7 @@
         }
         [self notifyUserWhenDone];
     } else {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"Google Drive folder missing" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please check if the path to Google Drive you've given - %@ is correct.", [[self class] googleDrivePath]];
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Dropbox folder missing" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please check if the path to Dropbox you've given - %@ is correct.", [[self class] googleDrivePath]];
         [alert runModal];
     }
 }

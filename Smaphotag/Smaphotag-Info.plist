@@ -61,6 +61,6 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>googleDrivePath</key>
-	<string>~/Google Drive</string>
+	<string>~/Dropbox</string>
 </dict>
 </plist>

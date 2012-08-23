@@ -10,6 +10,14 @@
 
 @implementation SPTAppDelegate
 
+- (void)showIntroductionScreen {
+    [self.window orderFront:nil];
+    [self.window makeKeyWindow];
+    
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Welcome to Smaphotag" defaultButton:@"Yeeha!!" alternateButton:nil otherButton:nil informativeTextWithFormat:@"After syncing your App with Dropbox, simply select your local Dropbox folder in this apps settings.\n\n When you've imported some photos you took during your last session with Smaphotag, simply drag & drop them on the dock icon.\n\nYou can close the App window, it runs only in the Doch.\n\nThat's it! Enjoy!"];
+    [alert runModal];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
     // Insert code here to initialize your application
@@ -20,14 +28,22 @@
     [self.window registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
     [self.window orderOut:nil];
     [self.window setStyleMask:NSTitledWindowMask | NSClosableWindowMask];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults boolForKey:@"isVeryFirstAppLaunch"]) {
+        [defaults setBool:NO forKey:@"isVeryFirstAppLaunch"];
+        [defaults synchronize];
+        [self showIntroductionScreen];
+    }
 }
 
 - (void)setApplicationSettingsDefaults {
     // Set the application defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *googleDrivePath = [@"~/Google Drive" stringByExpandingTildeInPath];
+    NSString *googleDrivePath = [@"~/Dropbox" stringByExpandingTildeInPath];
     NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 googleDrivePath, @"googleDrivePath", nil];
+                                 googleDrivePath,               @"googleDrivePath",
+                                 [NSNumber numberWithBool:YES], @"isVeryFirstAppLaunch", nil];
     [defaults registerDefaults:appDefaults];
     [defaults synchronize];
 }
