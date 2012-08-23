@@ -10,6 +10,8 @@
 
 @interface SPTAppDelegate : NSObject <NSApplicationDelegate>
 
+- (IBAction)showSettings:(id)sender;
+
 @property (assign) IBOutlet NSWindow *window;
 
 @end

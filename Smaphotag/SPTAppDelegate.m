@@ -17,6 +17,10 @@
     [self.window orderOut:nil];
 }
 
+- (IBAction)showSettings:(id)sender {
+    NSLog(@"showing settings");
+}
+
 - (void)setApplicationSettingsDefaults {
     // Set the application defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
