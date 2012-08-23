@@ -12,7 +12,8 @@
 
 + (NSString *)smaphotagPath {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults valueForKey:@"smaphotagPath"];
+    NSString *smaphotagPath = [[defaults valueForKey:@"googleDrivePath"] stringByAppendingPathComponent:@"smaphotag"];
+    return smaphotagPath;
 }
 
 + (NSDictionary *)exifForFile:(NSString *)file {

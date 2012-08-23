@@ -20,9 +20,9 @@
 - (void)setApplicationSettingsDefaults {
     // Set the application defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *smaphotagPath = [@"~/Google Drive/smaphotag" stringByExpandingTildeInPath];
+    NSString *googleDrivePath = [@"~/Google Drive" stringByExpandingTildeInPath];
     NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 smaphotagPath, @"smaphotagPath", nil];
+                                 googleDrivePath, @"googleDrivePath", nil];
     [defaults registerDefaults:appDefaults];
     [defaults synchronize];
 }
@@ -45,9 +45,6 @@
     NSLog(@"showing settings");
     [self.window orderFront:nil];
     [self.window makeKeyWindow];
-    
-    NSLog(@"current path is %@", [SPTPhotoTagger smaphotagPath]);
-//    [((NSTextField *)[self.settingsView viewWithTag:1]) setStringValue:[SPTPhotoTagger smaphotagPath]];
 }
 
 - (IBAction)saveSettings:(id)sender {
