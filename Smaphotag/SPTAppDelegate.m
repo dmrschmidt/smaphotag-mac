@@ -15,6 +15,7 @@
     // Insert code here to initialize your application
     [self.window registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
     [self.window orderOut:nil];
+    [self.window setStyleMask:NSTitledWindowMask | NSClosableWindowMask];
 }
 
 - (void)setApplicationSettingsDefaults {

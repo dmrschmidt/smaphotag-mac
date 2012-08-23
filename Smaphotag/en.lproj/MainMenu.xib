@@ -1299,7 +1299,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {381, 88}}</string>
+				<string key="NSWindowRect">{{335, 390}, {381, 91}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">Smaphotag Settings</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -1312,7 +1312,7 @@
 						<object class="NSTextField" id="390487843">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{17, 51}, {149, 17}}</string>
+							<string key="NSFrame">{{17, 54}, {149, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="307611924"/>
@@ -1353,10 +1353,9 @@
 						<object class="NSTextField" id="471241736">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{-3, 25}, {382, 17}}</string>
+							<string key="NSFrame">{{-3, 28}, {382, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="250995076">
@@ -1386,7 +1385,7 @@
 								<string>AutomatorVariables</string>
 								<string>NSFilenamesPboardType</string>
 							</set>
-							<string key="NSFrame">{{168, 47}, {196, 22}}</string>
+							<string key="NSFrame">{{168, 50}, {196, 22}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="471241736"/>
@@ -1439,7 +1438,7 @@
 							<string key="AMPlaceholder"/>
 						</object>
 					</array>
-					<string key="NSFrameSize">{381, 88}</string>
+					<string key="NSFrameSize">{381, 91}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="390487843"/>
