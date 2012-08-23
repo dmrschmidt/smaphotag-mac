@@ -11,7 +11,8 @@
 @implementation SPTPhotoTagger
 
 + (NSString *)googleDrivePath {
-    return @"/Users/dmrschmidt/Google Drive/smaphotag";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults valueForKey:@"googleDrivePath"];
 }
 
 + (NSDictionary *)exifForFile:(NSString *)file {

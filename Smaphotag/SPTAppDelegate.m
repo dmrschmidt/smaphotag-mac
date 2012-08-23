@@ -16,9 +16,21 @@
     [self.window registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
 }
 
+- (void)setApplicationSettingsDefaults {
+    // Set the application defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *googleDrivePath = [@"~/Google Drive/smaphotag" stringByExpandingTildeInPath];
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 googleDrivePath, @"googleDrivePath", nil];
+    [defaults registerDefaults:appDefaults];
+    [defaults synchronize];
+}
+
 // ./exiftool -geosync=+02:00:00 -geotag ~/Desktop/log.gpx "-xmp:geotime<createdate" ~/Desktop/sample
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
     
+    [self setApplicationSettingsDefaults];
     [SPTPhotoTagger tagFileOrFilesAtPath:filename];
     
 //    NSDictionary *GPSData = [[SPTPhotoTagger exifForFile:filename] objectForKey:@"{GPS}"];
