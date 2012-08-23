@@ -77,18 +77,18 @@
 #pragma mark SPTPhotoTaggerDelegate methods
 
 - (void)didFinishTagging {
-//    [self.window orderOut:nil];
-    
+    [self.window orderOut:nil];
+    [self.progressIndicator stopAnimation:self];
     NSAlert *alert = [NSAlert alertWithMessageText:@"GPS Tagging Complete" defaultButton:@"Yeeha!!" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Your photos have been tagged succesfully."];
     [alert runModal];
 }
 
 - (void)didCompleteTagging:(NSUInteger)lastTagged ofTotal:(NSUInteger)total {
-    if([self.progressIndicator isIndeterminate]) {
-        [self.progressIndicator stopAnimation:self];
-        [self.progressIndicator setIndeterminate:NO];
-    }
-    [self.progressIndicator setDoubleValue:(lastTagged / (CGFloat)total)];
+//    if([self.progressIndicator isIndeterminate]) {
+//        [self.progressIndicator stopAnimation:self];
+//        [self.progressIndicator setIndeterminate:NO];
+//    }
+//    [self.progressIndicator setDoubleValue:(lastTagged / (CGFloat)total)];
 }
 
 #pragma mark -

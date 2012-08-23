@@ -111,13 +111,13 @@
             if(![gpxFile hasSuffix:@"gpx"]) continue;
             
             NSString *gpxFilePath = [gpxPath stringByAppendingPathComponent:gpxFile];
-            for(NSString *filePath in [self photoFileList:fileOrdDirPath]) {
+//            for(NSString *filePath in [self photoFileList:fileOrdDirPath]) {
                 NSArray *arguments = [NSArray arrayWithObjects:@"-overwrite_original", @"-geotag",
-                                      gpxFilePath, @"-xmp:geotime<createdate", filePath, nil];
+                                      gpxFilePath, @"-xmp:geotime<createdate", fileOrdDirPath, nil];
                 NSTask *task = [NSTask launchedTaskWithLaunchPath:exiftoolPath arguments:arguments];
                 [task setTerminationHandler:^(NSTask *task) { [self notifyUserAboutCompletedTask]; }];
                 [self.taskList addObject:task];
-            }
+//            }
         }
         [self notifyUserWhenDone];
     } else {
