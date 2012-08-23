@@ -19,6 +19,7 @@
 		C34E884615E580A0004D6B14 /* SmaphotagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C34E884515E580A0004D6B14 /* SmaphotagTests.m */; };
 		C34E885115E58452004D6B14 /* SPTPhotoTagger.m in Sources */ = {isa = PBXBuildFile; fileRef = C34E885015E58452004D6B14 /* SPTPhotoTagger.m */; };
 		C34E89C915E59DA0004D6B14 /* exiftool in Resources */ = {isa = PBXBuildFile; fileRef = C34E89C815E59DA0004D6B14 /* exiftool */; };
+		C36038DD15E65E15006C04A4 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = C36038DC15E65E15006C04A4 /* icon.icns */; };
 		C3E8326015E63EBA0026A47A /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E8325F15E63EBA0026A47A /* Automator.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		C34E884F15E58452004D6B14 /* SPTPhotoTagger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPhotoTagger.h; sourceTree = "<group>"; };
 		C34E885015E58452004D6B14 /* SPTPhotoTagger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTPhotoTagger.m; sourceTree = "<group>"; };
 		C34E89C815E59DA0004D6B14 /* exiftool */ = {isa = PBXFileReference; lastKnownFileType = folder; path = exiftool; sourceTree = "<group>"; };
+		C36038DC15E65E15006C04A4 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		C3E8325F15E63EBA0026A47A /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -83,12 +85,12 @@
 		C34E880C15E5809F004D6B14 = {
 			isa = PBXGroup;
 			children = (
-				C3E8325F15E63EBA0026A47A /* Automator.framework */,
 				C34E885215E5911D004D6B14 /* External */,
 				C34E882115E5809F004D6B14 /* Smaphotag */,
 				C34E883E15E580A0004D6B14 /* SmaphotagTests */,
 				C34E881A15E5809F004D6B14 /* Frameworks */,
 				C34E881815E5809F004D6B14 /* Products */,
+				C36038DE15E65E3E006C04A4 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +106,7 @@
 		C34E881A15E5809F004D6B14 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3E8325F15E63EBA0026A47A /* Automator.framework */,
 				C34E881B15E5809F004D6B14 /* Cocoa.framework */,
 				C34E883915E580A0004D6B14 /* SenTestingKit.framework */,
 				C34E881D15E5809F004D6B14 /* Other Frameworks */,
@@ -171,6 +174,14 @@
 				C34E89C815E59DA0004D6B14 /* exiftool */,
 			);
 			path = External;
+			sourceTree = "<group>";
+		};
+		C36038DE15E65E3E006C04A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C36038DC15E65E15006C04A4 /* icon.icns */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +260,7 @@
 				C34E882C15E5809F004D6B14 /* Credits.rtf in Resources */,
 				C34E883215E580A0004D6B14 /* MainMenu.xib in Resources */,
 				C34E89C915E59DA0004D6B14 /* exiftool in Resources */,
+				C36038DD15E65E15006C04A4 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
