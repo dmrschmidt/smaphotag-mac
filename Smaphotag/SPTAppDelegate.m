@@ -16,14 +16,14 @@
     [self.window registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
 }
 
+// ./exiftool -geosync=+02:00:00 -geotag ~/Desktop/log.gpx "-xmp:geotime<createdate" ~/Desktop/sample
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
-    NSLog(@"EXIF DATA: %@", [SPTPhotoTagger exifForFile:filename]);
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"exiftool/exiftool" ofType:nil];
-    NSLog(@"path: %@", path);
+    [SPTPhotoTagger tagFileOrFilesAtPath:filename];
     
-    NSArray *arguments = [NSArray arrayWithObjects:@"-GPSLongitude=\"7.422809\"", @"-GPSLatitude=\"48.419973\"", filename, nil];
-    NSTask *task = [NSTask launchedTaskWithLaunchPath:path arguments:arguments];
+//    NSDictionary *GPSData = [[SPTPhotoTagger exifForFile:filename] objectForKey:@"{GPS}"];
+//    NSLog(@"EXIF DATA: %@", [GPSData valueForKey:@"Latitude"]);
+    
     return YES;
 }
 

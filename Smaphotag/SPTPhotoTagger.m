@@ -7,9 +7,12 @@
 //
 
 #import "SPTPhotoTagger.h"
-//#import "EXF.h"
 
 @implementation SPTPhotoTagger
+
++ (NSString *)googleDrivePath {
+    return @"/Users/dmrschmidt/Google Drive/smaphotag/1345684149.gpx";
+}
 
 + (NSDictionary *)exifForFile:(NSString *)file {
     NSDictionary *dic = nil;
@@ -34,38 +37,19 @@
     return dic;
 }
 
-// Helper methods for location conversion
--(NSMutableArray*) createLocArray:(double) val{
-    val = fabs(val);
-    NSMutableArray* array = [[NSMutableArray alloc] init];
-    double deg = (int)val;
-    [array addObject:[NSNumber numberWithDouble:deg]];
-    val = val - deg;
-    val = val*60;
-    double minutes = (int) val;
-    [array addObject:[NSNumber numberWithDouble:minutes]];
-    val = val - minutes;
-    val = val *60;
-    double seconds = val;
-    [array addObject:[NSNumber numberWithDouble:seconds]];
-    return array;
++ (void)tagFileOrFilesAtPath:(NSString *)path {
+    BOOL isDir;
+    NSError *error = nil;
+    
+    [[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDir];
+    NSUInteger count = [[[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&error] count];
+    NSLog(@"found %ld files at path", count);
+    NSString *exiftoolPath = [[NSBundle mainBundle] pathForResource:@"exiftool/exiftool" ofType:nil];
+    
+    NSArray *arguments = [NSArray arrayWithObjects:@"-geosync=+02:00:00", @"-geotag", [self googleDrivePath], @"-xmp:geotime<createdate", path, nil];
+    NSTask *task = [NSTask launchedTaskWithLaunchPath:exiftoolPath arguments:arguments];
+    [task waitUntilExit];
+    NSLog(@"exited with status %d", [task terminationStatus]);
 }
-//
-//-(void) populateGPS: (EXFGPSLoc*)gpsLoc :(NSArray*) locArray{
-//    long numDenumArray[2];
-//    long* arrPtr = numDenumArray;
-//    [EXFUtils convertRationalToFraction:&arrPtr :[locArray objectAtIndex:0]];
-//    EXFraction* fract = [[EXFraction alloc] initWith:numDenumArray[0] :numDenumArray[1]];
-//    gpsLoc.degrees = fract;
-//    [fract release];
-//    [EXFUtils convertRationalToFraction:&arrPtr :[locArray objectAtIndex:1]];
-//    fract = [[EXFraction alloc] initWith:numDenumArray[0] :numDenumArray[1]];
-//    gpsLoc.minutes = fract;
-//    [fract release];
-//    [EXFUtils convertRationalToFraction:&arrPtr :[locArray objectAtIndex:2]];
-//    fract = [[EXFraction alloc] initWith:numDenumArray[0] :numDenumArray[1]];
-//    gpsLoc.seconds = fract;
-//    [fract release]   
-//}
 
 @end

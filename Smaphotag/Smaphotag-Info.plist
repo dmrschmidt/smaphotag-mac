@@ -44,6 +44,7 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>public.jpeg</string>
+				<string>public.folder</string>
 			</array>
 		</dict>
 		<dict>
