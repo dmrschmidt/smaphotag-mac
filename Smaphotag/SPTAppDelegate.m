@@ -30,7 +30,7 @@
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
     
     [self setApplicationSettingsDefaults];
-    [SPTPhotoTagger tagFileOrFilesAtPath:filename];
+    [[[SPTPhotoTagger alloc] init] tagFileOrFilesAtPath:filename];
     
     // NSDictionary *GPSData = [[SPTPhotoTagger exifForFile:filename] objectForKey:@"{GPS}"];
     // NSLog(@"EXIF DATA: %@", [GPSData valueForKey:@"Latitude"]);

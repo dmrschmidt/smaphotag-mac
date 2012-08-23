@@ -12,6 +12,8 @@
 
 + (NSString *)smaphotagPath;
 + (NSDictionary *)exifForFile:(NSString *)file;
-+ (void)tagFileOrFilesAtPath:(NSString *)path;
+- (void)tagFileOrFilesAtPath:(NSString *)path;
+
+@property(nonatomic) NSMutableArray *taskList;
 
 @end

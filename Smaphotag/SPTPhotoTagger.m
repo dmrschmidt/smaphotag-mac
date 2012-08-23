@@ -44,11 +44,20 @@
     return dic;
 }
 
-+ (void)tagFileOrFilesAtPath:(NSString *)path {
+- (void)notifyUserWhenDone {
+    for(NSTask *task in self.taskList) {
+        [task waitUntilExit];
+    }
+    NSAlert *alert = [NSAlert alertWithMessageText:@"GPS Tagging Complete" defaultButton:@"Yeeha!!" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Your photos have been tagged succesfully."];
+    [alert runModal];
+}
+
+- (void)tagFileOrFilesAtPath:(NSString *)path {
     BOOL isDir;
     NSString *exiftoolPath = [[NSBundle mainBundle] pathForResource:@"exiftool/exiftool" ofType:nil];
-    NSString *gpxPath = [self smaphotagPath];
+    NSString *gpxPath = [[self class] smaphotagPath];
     NSLog(@"looking fore GPX files at path %@", gpxPath);
+    self.taskList = [[NSMutableArray alloc] init];
     
     if([[NSFileManager defaultManager] fileExistsAtPath:gpxPath isDirectory:&isDir] && isDir) {
         NSArray *gpxList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:gpxPath error:nil];
@@ -59,11 +68,11 @@
             NSArray *arguments = [NSArray arrayWithObjects:@"-geosync=+02:00:00", @"-geotag",
                                   gpxFilePath, @"-xmp:geotime<createdate", path, nil];
             NSTask *task = [NSTask launchedTaskWithLaunchPath:exiftoolPath arguments:arguments];
-            [task waitUntilExit];
-            NSLog(@"exited with status %d", [task terminationStatus]);
+            [self.taskList addObject:task];
         }
+        [self notifyUserWhenDone];
     } else {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"Google Drive folder missing" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please check if the path to Google Drive you've given - %@ is correct.", [self googleDrivePath]];
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Google Drive folder missing" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please check if the path to Google Drive you've given - %@ is correct.", [[self class] googleDrivePath]];
         [alert runModal];
     }
 }
