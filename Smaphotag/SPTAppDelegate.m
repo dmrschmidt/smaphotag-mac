@@ -38,6 +38,10 @@
     [self.window orderFront:nil];
     [self.window makeKeyWindow];
     
+    [self.progressIndicator setDoubleValue:0.0];
+    [self.progressIndicator setMinValue:0.0];
+    [self.progressIndicator setMaxValue:1.0];
+    [self.progressIndicator setIndeterminate:YES];
     [self.progressIndicator startAnimation:self];
 }
 
@@ -57,15 +61,18 @@
 #pragma mark SPTPhotoTaggerDelegate methods
 
 - (void)didFinishTagging {
-    [self.progressIndicator stopAnimation:self];
-    [self.window orderOut:nil];
+//    [self.window orderOut:nil];
     
     NSAlert *alert = [NSAlert alertWithMessageText:@"GPS Tagging Complete" defaultButton:@"Yeeha!!" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Your photos have been tagged succesfully."];
     [alert runModal];
 }
 
 - (void)didCompleteTagging:(NSUInteger)lastTagged ofTotal:(NSUInteger)total {
-    
+    if([self.progressIndicator isIndeterminate]) {
+        [self.progressIndicator stopAnimation:self];
+        [self.progressIndicator setIndeterminate:NO];
+    }
+    [self.progressIndicator setDoubleValue:(lastTagged / (CGFloat)total)];
 }
 
 #pragma mark -

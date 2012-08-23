@@ -24,6 +24,7 @@
 
 @property(nonatomic) NSMutableArray *taskList;
 @property(assign) NSUInteger totalCountToTag;
+@property(assign) NSUInteger alreadyTaggedCount;
 @property(assign) NSObject<SPTPhotoTaggerDelegate> *delegate;
 
 @end
