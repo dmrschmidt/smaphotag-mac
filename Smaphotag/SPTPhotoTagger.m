@@ -52,7 +52,7 @@
     [alert runModal];
 }
 
-- (void)tagFileOrFilesAtPath:(NSString *)path {
+- (void)tagFileOrFilesAtPath:(NSString *)fileOrdDirPath {
     BOOL isDir;
     NSString *exiftoolPath = [[NSBundle mainBundle] pathForResource:@"exiftool/exiftool" ofType:nil];
     NSString *gpxPath = [[self class] smaphotagPath];
@@ -65,8 +65,8 @@
             if(![gpxFile hasSuffix:@"gpx"]) continue;
             
             NSString *gpxFilePath = [gpxPath stringByAppendingPathComponent:gpxFile];
-            NSArray *arguments = [NSArray arrayWithObjects:@"-geosync=+02:00:00", @"-geotag",
-                                  gpxFilePath, @"-xmp:geotime<createdate", path, nil];
+            NSArray *arguments = [NSArray arrayWithObjects:@"-geotag", gpxFilePath,
+                                  @"-xmp:geotime<createdate", fileOrdDirPath, nil];
             NSTask *task = [NSTask launchedTaskWithLaunchPath:exiftoolPath arguments:arguments];
             [self.taskList addObject:task];
         }
