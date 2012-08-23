@@ -23,6 +23,7 @@
 - (void)tagFileOrFilesAtPath:(NSString *)path;
 
 @property(nonatomic) NSMutableArray *taskList;
+@property(assign) NSUInteger totalCountToTag;
 @property(assign) NSObject<SPTPhotoTaggerDelegate> *delegate;
 
 @end

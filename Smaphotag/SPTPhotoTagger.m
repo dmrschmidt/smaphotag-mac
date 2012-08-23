@@ -59,12 +59,41 @@
     [self.delegate didFinishTagging];
 }
 
+- (void)determineTotalCountToTag:(NSString *)fileOrDir {
+    BOOL isDir;
+    NSUInteger gpxFileCount = 0;
+    NSString *gpxPath = [[self class] smaphotagPath];
+    if([[NSFileManager defaultManager] fileExistsAtPath:gpxPath isDirectory:&isDir] && isDir) {
+        NSArray *gpxList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:gpxPath error:nil];
+        for(NSString *gpxFile in gpxList) {
+            if([gpxFile hasSuffix:@"gpx"]) {
+                gpxFileCount++;
+            }
+        }
+    }
+    
+    NSUInteger imageFileCount = 0;
+    if([[NSFileManager defaultManager] fileExistsAtPath:fileOrDir isDirectory:&isDir] && isDir) {
+        NSArray *fileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:fileOrDir error:nil];
+        for(NSString *file in fileList) {
+            if([file hasSuffix:@"jpg"] || [file hasSuffix:@"jpeg"]) {
+                imageFileCount++;
+            }
+        }
+    } else {
+        imageFileCount = 1;
+    }
+    
+    self.totalCountToTag = (gpxFileCount * imageFileCount);
+}
+
 - (void)tagFileOrFilesAtPath:(NSString *)fileOrdDirPath {
     BOOL isDir;
     NSString *exiftoolPath = [[NSBundle mainBundle] pathForResource:@"exiftool/exiftool" ofType:nil];
     NSString *gpxPath = [[self class] smaphotagPath];
     NSLog(@"looking fore GPX files at path %@", gpxPath);
     self.taskList = [[NSMutableArray alloc] init];
+    [self determineTotalCountToTag:fileOrdDirPath];
     
     if([[NSFileManager defaultManager] fileExistsAtPath:gpxPath isDirectory:&isDir] && isDir) {
         NSArray *gpxList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:gpxPath error:nil];
