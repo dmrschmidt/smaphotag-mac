@@ -10,9 +10,14 @@
 
 @implementation SPTPhotoTagger
 
-+ (NSString *)smaphotagPath {
++ (NSString *)googleDrivePath {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *smaphotagPath = [[defaults valueForKey:@"googleDrivePath"] stringByAppendingPathComponent:@"smaphotag"];
+    NSString *googleDrivePath = [[defaults valueForKey:@"googleDrivePath"] stringByExpandingTildeInPath];
+    return googleDrivePath;
+}
+
++ (NSString *)smaphotagPath {
+    NSString *smaphotagPath = [[self googleDrivePath] stringByAppendingPathComponent:@"smaphotag"];
     return smaphotagPath;
 }
 
@@ -58,7 +63,7 @@
             NSLog(@"exited with status %d", [task terminationStatus]);
         }
     } else {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"Google Drive folder missing" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please check if the path to Google Drive you've given - %@ is correct.", [self smaphotagPath]];
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Google Drive folder missing" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please check if the path to Google Drive you've given - %@ is correct.", [self googleDrivePath]];
         [alert runModal];
     }
 }
