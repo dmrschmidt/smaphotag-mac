@@ -17,14 +17,9 @@
     [self.window orderOut:nil];
 }
 
-- (IBAction)showSettings:(id)sender {
-    NSLog(@"showing settings");
-}
-
 - (void)setApplicationSettingsDefaults {
     // Set the application defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     NSString *googleDrivePath = [@"~/Google Drive/smaphotag" stringByExpandingTildeInPath];
     NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
                                  googleDrivePath, @"googleDrivePath", nil];
@@ -32,17 +27,31 @@
     [defaults synchronize];
 }
 
-// ./exiftool -geosync=+02:00:00 -geotag ~/Desktop/log.gpx "-xmp:geotime<createdate" ~/Desktop/sample
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
     
     [self setApplicationSettingsDefaults];
     [SPTPhotoTagger tagFileOrFilesAtPath:filename];
     
-//    NSDictionary *GPSData = [[SPTPhotoTagger exifForFile:filename] objectForKey:@"{GPS}"];
-//    NSLog(@"EXIF DATA: %@", [GPSData valueForKey:@"Latitude"]);
+    // NSDictionary *GPSData = [[SPTPhotoTagger exifForFile:filename] objectForKey:@"{GPS}"];
+    // NSLog(@"EXIF DATA: %@", [GPSData valueForKey:@"Latitude"]);
     
     return YES;
 }
 
+#pragma mark -
+#pragma mark Settings
+
+- (IBAction)showSettings:(id)sender {
+    NSLog(@"showing settings");
+    [self.window orderFront:nil];
+    [self.window makeKeyWindow];
+    
+    NSLog(@"current path is %@", [SPTPhotoTagger googleDrivePath]);
+//    [((NSTextField *)[self.settingsView viewWithTag:1]) setStringValue:[SPTPhotoTagger googleDrivePath]];
+}
+
+- (IBAction)saveSettings:(id)sender {
+    NSLog(@"saving settings");
+}
 
 @end

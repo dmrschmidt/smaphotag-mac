@@ -10,6 +10,7 @@
 
 @interface SPTPhotoTagger : NSObject
 
++ (NSString *)googleDrivePath;
 + (NSDictionary *)exifForFile:(NSString *)file;
 + (void)tagFileOrFilesAtPath:(NSString *)path;
 

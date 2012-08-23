@@ -19,6 +19,7 @@
 		C34E884615E580A0004D6B14 /* SmaphotagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C34E884515E580A0004D6B14 /* SmaphotagTests.m */; };
 		C34E885115E58452004D6B14 /* SPTPhotoTagger.m in Sources */ = {isa = PBXBuildFile; fileRef = C34E885015E58452004D6B14 /* SPTPhotoTagger.m */; };
 		C34E89C915E59DA0004D6B14 /* exiftool in Resources */ = {isa = PBXBuildFile; fileRef = C34E89C815E59DA0004D6B14 /* exiftool */; };
+		C3E8326015E63EBA0026A47A /* Automator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E8325F15E63EBA0026A47A /* Automator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		C34E884F15E58452004D6B14 /* SPTPhotoTagger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPhotoTagger.h; sourceTree = "<group>"; };
 		C34E885015E58452004D6B14 /* SPTPhotoTagger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTPhotoTagger.m; sourceTree = "<group>"; };
 		C34E89C815E59DA0004D6B14 /* exiftool */ = {isa = PBXFileReference; lastKnownFileType = folder; path = exiftool; sourceTree = "<group>"; };
+		C3E8325F15E63EBA0026A47A /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E8326015E63EBA0026A47A /* Automator.framework in Frameworks */,
 				C34E881C15E5809F004D6B14 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +83,7 @@
 		C34E880C15E5809F004D6B14 = {
 			isa = PBXGroup;
 			children = (
+				C3E8325F15E63EBA0026A47A /* Automator.framework */,
 				C34E885215E5911D004D6B14 /* External */,
 				C34E882115E5809F004D6B14 /* Smaphotag */,
 				C34E883E15E580A0004D6B14 /* SmaphotagTests */,
@@ -469,6 +473,7 @@
 				C34E884B15E580A0004D6B14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C34E884C15E580A0004D6B14 /* Build configuration list for PBXNativeTarget "SmaphotagTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +482,7 @@
 				C34E884E15E580A0004D6B14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -42,6 +42,7 @@
     BOOL isDir;
     NSString *exiftoolPath = [[NSBundle mainBundle] pathForResource:@"exiftool/exiftool" ofType:nil];
     NSString *gpxPath = [self googleDrivePath];
+    NSLog(@"looking fore GPX files at path %@", gpxPath);
     
     if([[NSFileManager defaultManager] fileExistsAtPath:gpxPath isDirectory:&isDir] && isDir) {
         NSArray *gpxList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:gpxPath error:nil];
