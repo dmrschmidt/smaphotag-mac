@@ -23,8 +23,6 @@
     // Insert code here to initialize your application
     [self setApplicationSettingsDefaults];
     
-    self.settingsView = self.window.contentView;
-    
     [self.window registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
     [self.window orderOut:nil];
     [self.window setStyleMask:NSTitledWindowMask | NSClosableWindowMask];
