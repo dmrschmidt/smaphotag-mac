@@ -11,7 +11,7 @@
 @implementation SPTPhotoTagger
 
 + (NSString *)googleDrivePath {
-    return @"/Users/dmrschmidt/Google Drive/smaphotag/1345684149.gpx";
+    return @"/Users/dmrschmidt/Google Drive/smaphotag";
 }
 
 + (NSDictionary *)exifForFile:(NSString *)file {
@@ -39,17 +39,25 @@
 
 + (void)tagFileOrFilesAtPath:(NSString *)path {
     BOOL isDir;
-    NSError *error = nil;
-    
-    [[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDir];
-    NSUInteger count = [[[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&error] count];
-    NSLog(@"found %ld files at path", count);
     NSString *exiftoolPath = [[NSBundle mainBundle] pathForResource:@"exiftool/exiftool" ofType:nil];
+    NSString *gpxPath = [self googleDrivePath];
     
-    NSArray *arguments = [NSArray arrayWithObjects:@"-geosync=+02:00:00", @"-geotag", [self googleDrivePath], @"-xmp:geotime<createdate", path, nil];
-    NSTask *task = [NSTask launchedTaskWithLaunchPath:exiftoolPath arguments:arguments];
-    [task waitUntilExit];
-    NSLog(@"exited with status %d", [task terminationStatus]);
+    if([[NSFileManager defaultManager] fileExistsAtPath:gpxPath isDirectory:&isDir] && isDir) {
+        NSArray *gpxList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:gpxPath error:nil];
+        for(NSString *gpxFile in gpxList) {
+            if(![gpxFile hasSuffix:@"gpx"]) continue;
+            
+            NSString *gpxFilePath = [gpxPath stringByAppendingPathComponent:gpxFile];
+            NSArray *arguments = [NSArray arrayWithObjects:@"-geosync=+02:00:00", @"-geotag",
+                                  gpxFilePath, @"-xmp:geotime<createdate", path, nil];
+            NSTask *task = [NSTask launchedTaskWithLaunchPath:exiftoolPath arguments:arguments];
+            [task waitUntilExit];
+            NSLog(@"exited with status %d", [task terminationStatus]);
+        }
+    } else {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Google Drive folder missing" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please check if the path to Google Drive you've given - %@ is correct.", [self googleDrivePath]];
+        [alert runModal];
+    }
 }
 
 @end
