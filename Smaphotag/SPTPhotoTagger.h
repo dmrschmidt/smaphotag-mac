@@ -8,12 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol SPTPhotoTaggerDelegate <NSObject>
+
+- (void)didFinishTagging;
+- (void)didCompleteTagging:(NSUInteger)lastTagged ofTotal:(NSUInteger)total;
+
+@end
+
 @interface SPTPhotoTagger : NSObject
 
 + (NSString *)smaphotagPath;
 + (NSDictionary *)exifForFile:(NSString *)file;
+- (SPTPhotoTagger *)initWithDelegate:(NSObject<SPTPhotoTaggerDelegate> *)delegate;
 - (void)tagFileOrFilesAtPath:(NSString *)path;
 
 @property(nonatomic) NSMutableArray *taskList;
+@property(assign) NSObject<SPTPhotoTaggerDelegate> *delegate;
 
 @end

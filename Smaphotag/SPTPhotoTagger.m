@@ -44,12 +44,19 @@
     return dic;
 }
 
+- (SPTPhotoTagger *)initWithDelegate:(NSObject<SPTPhotoTaggerDelegate> *)delegate {
+    if(self = [super init]) {
+        self.delegate = delegate;
+    }
+    return self;
+}
+
 - (void)notifyUserWhenDone {
     for(NSTask *task in self.taskList) {
         [task waitUntilExit];
     }
-    NSAlert *alert = [NSAlert alertWithMessageText:@"GPS Tagging Complete" defaultButton:@"Yeeha!!" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Your photos have been tagged succesfully."];
-    [alert runModal];
+    
+    [self.delegate didFinishTagging];
 }
 
 - (void)tagFileOrFilesAtPath:(NSString *)fileOrdDirPath {

@@ -7,12 +7,16 @@
 //
 
 #import "SPTAppDelegate.h"
-#import "SPTPhotoTagger.h"
 
 @implementation SPTAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    
     // Insert code here to initialize your application
+    [self setApplicationSettingsDefaults];
+    
+    self.settingsView = self.window.contentView;
+    
     [self.window registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
     [self.window orderOut:nil];
     [self.window setStyleMask:NSTitledWindowMask | NSClosableWindowMask];
@@ -28,10 +32,20 @@
     [defaults synchronize];
 }
 
+- (void)showProgressIndicatorView {
+    self.window.title = @"Smaphotag GPS Tagging";
+    [self.window setContentView:self.progressView];
+    [self.window orderFront:nil];
+    [self.window makeKeyWindow];
+    
+    [self.progressIndicator startAnimation:self];
+}
+
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename {
     
-    [self setApplicationSettingsDefaults];
-    [[[SPTPhotoTagger alloc] init] tagFileOrFilesAtPath:filename];
+    [self showProgressIndicatorView];
+    SPTPhotoTagger *photoTagger = [[SPTPhotoTagger alloc] initWithDelegate:self];
+    [photoTagger tagFileOrFilesAtPath:filename];
     
     // NSDictionary *GPSData = [[SPTPhotoTagger exifForFile:filename] objectForKey:@"{GPS}"];
     // NSLog(@"EXIF DATA: %@", [GPSData valueForKey:@"Latitude"]);
@@ -40,10 +54,26 @@
 }
 
 #pragma mark -
+#pragma mark SPTPhotoTaggerDelegate methods
+
+- (void)didFinishTagging {
+    [self.progressIndicator stopAnimation:self];
+    [self.window orderOut:nil];
+    
+    NSAlert *alert = [NSAlert alertWithMessageText:@"GPS Tagging Complete" defaultButton:@"Yeeha!!" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Your photos have been tagged succesfully."];
+    [alert runModal];
+}
+
+- (void)didCompleteTagging:(NSUInteger)lastTagged ofTotal:(NSUInteger)total {
+    
+}
+
+#pragma mark -
 #pragma mark Settings
 
 - (IBAction)showSettings:(id)sender {
-    NSLog(@"showing settings");
+    self.window.title = @"Smaphotag Settings";
+    [self.window setContentView:self.settingsView];
     [self.window orderFront:nil];
     [self.window makeKeyWindow];
 }
