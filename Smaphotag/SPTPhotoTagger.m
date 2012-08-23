@@ -65,7 +65,7 @@
     if([[NSFileManager defaultManager] fileExistsAtPath:fileOrDir isDirectory:&isDir] && isDir) {
         NSArray *fileList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:fileOrDir error:nil];
         for(NSString *file in fileList) {
-            if([file hasSuffix:@"jpg"] || [file hasSuffix:@"jpeg"]) {
+            if([[file lowercaseString] hasSuffix:@"jpg"] || [[file lowercaseString] hasSuffix:@"jpeg"]) {
                 [photoFileList addObject:[fileOrDir stringByAppendingPathComponent:file]];
             }
         }
